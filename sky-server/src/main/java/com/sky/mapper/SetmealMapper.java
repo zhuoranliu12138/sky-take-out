@@ -27,7 +27,7 @@ public interface SetmealMapper {
 
     Page<Setmeal> pageQuery(SetmealPageQueryDTO setmealPageQueryDTO);
 
-    @Update("update ")
+    @Update("update setmeal set status=#{status} where id=#{id}")
     void startOrStop(Integer status, Long id);
     @AutoFill(value = OperationType.UPDATE)
     void update(Setmeal setmeal);
